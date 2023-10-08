@@ -1,0 +1,141 @@
+#logbody{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background-image: url(/static/image/back7.jpg);
+    background-attachment: fixed;
+}
+
+
+.log2main{
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#log2chk{
+	display: none;
+}
+.log2signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+#lbl1{
+	color: #ff7200;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+#inp1{
+    color: #fff;
+	width: 60%;
+	height: 20px;
+	background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: 20px;
+    border-color: #fff;
+	outline: none;
+	border-radius: 5px;
+}
+#log2signupbt{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #000;
+	background: #ff7200;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+ #log2back a{
+        text-decoration: none;
+    color: #000;
+    transition: .3s ease;
+ }
+#log2back{
+	width: 50%;
+	height: 30px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #000;
+	background: #ff7200;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+#log2loginbt{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #000;
+	background: #ff7200;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+#log2fo2{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+button:hover{
+	background: #ff7200;
+}
+.log2login{
+	height: 460px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+	border-radius: 60% / 5%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.log2login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+#log2chk:checked ~ .log2login{
+	transform: translateY(-500px);
+}
+#log2chk:checked ~ .log2login label{
+	transform: scale(1);	
+}
+#log2chk:checked ~ .log2signup label{
+	transform: scale(.6);
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" href="/static/style/style.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">BIBEK(L)</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'about' %}">ABOUT</a></li>
+                    <li><a href="{% url 'preatics' %}">OUR PREATICLE </a></li>
+                    <li><a href="{% url 'design' %}">OUR MSTI</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To search">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+
+        </div>
+        <div class="content">
+            <h1>Web Design & <br><span>Development</span> <br>Preatics & Uplode</h1>
+            <p class="par">You can Design your website and upload hear.
+                <br> It's for Entertainment
+                <br> Can you design a side through HTML, CSS & javaSR ?
+            </p>
+
+            <button class="cn"><a href="/signin">JOIN US</a></button>
+            <div class="form">
+                <form action="/signin" method="post">
+                    {% csrf_token %}
+                    <h2>Login Here</h2>
+                    <input type="tex" name="Uname" placeholder="Enter Username Here">
+                    <input type="password" name="pswd" placeholder="Enter Password Here">
+                    <button type="submit" class="btnn">Login</button>
+
+                    <p class="link">Don't have an account<br>
+                        <a href="/signin">Sign up </a> here</a>
+                    </p>
+                    <p class="liw">CONTACT WITH ME</p>
+
+                    <div class="icons">
+                        <a href="https://www.facebook.com/bibek.jena.3150" target="-blank"><ion-icon
+                                name="logo-facebook"></ion-icon></a>
+                        <a href="https://www.instagram.com/nalini_jena7709/" target="-blank"><ion-icon
+                                name="logo-instagram"></ion-icon></a>
+                        <a href="https://twitter.com/bibekjena7709/" target="-blank"><ion-icon
+                                name="logo-twitter"></ion-icon></a>
+                        <a href="  " target="-blank"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="https://join.skype.com/invite/xlariXN60neo" target="-blank"><ion-icon
+                                name="logo-skype"></ion-icon></a>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+</body>
+
+</html>

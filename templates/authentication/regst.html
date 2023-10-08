@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/static/style/regstyle.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Plz Provide MoreDetails</h1>
+        <h2>Compate Registation process</h2>
+        <div class="form-wrapper">
+            <form action="/userdetails" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-item">
+                    <label for="fullname">User Image:</label>
+                    <input type="file" id="studentimage" name="picfil" placeholder="Enter your picture" required>
+                    <div class="form-item">
+                        <label for="fullname">User_Name:</label>
+                        <input type="text" name="username_auser" id="fullname" value=" {{u_name}} " readonly required/>
+                    </div>
+                    
+                </div>
+                <div class="form-item">
+                    <label for="fullname">Your Name:</label>
+                    <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+                </div>
+                <div class="form-item">
+                    <label for="username">Father's Name:</label>
+                    <input type="text" name="fathername" id="fathersname" placeholder="Father's Full Name" required>
+                </div>
+                <div class="form-item">
+                    <label for="username">Mother's Name:</label>
+                    <input type="text" name="mothersname" id="mothersname" placeholder="Mother's Full Name" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="gender">Gender:</label>
+                    <div class="genders">
+                        <p>Male</p> <input type="radio" name="gender" id="gender" value="male" required>
+                        <p>Female</p> <input type="radio" name="gender" id="gender" value="female">
+                        <p>Other</p> <input type="radio" name="gender" id="gender" value="other">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="DOB">Date of Birth</label>
+                    <input type="date" name="DOB" id="DOB" required />
+                    
+                </div>
+                <div class="form-item">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="email@xyz.com" value="{{u_email}}" readonly>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="email" placeholder="email@xyz.com" value="{{passw}}" readonly>
+                </div>
+                <div class="form-item">
+                    <label for="qullification">Level:</label>
+                    <select name="qullification" id="level">
+                        <option value="highschool">High School</option>
+                        <option value="highschool">Bachelors </option>
+                        <option value="highschool">Masters</option>
+                        <option value="highschool">Phd</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="department">Your Excellance:</label>
+                    <select name="department" id="department">
+                        <option value="C#">C#</option>
+                        <option value="C++">C++</option>
+                        <option value="HTML">HTML</option>
+                        <option value="PYTHON">PYTHON</option>
+                        <option value="JAVA SCRIPT">JAVA SCRIPT</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JAVA">JAVA</option>
+                        <option value="R">R</option>
+                        <option value="DJANO">DJANO</option>
+                        <option value="REACT">REACT</option>
+                        <option value="ANGULAR">ANGULAR</option>
+                        <option value="OTHERS">OTHERS...</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="phonenumber1">Mobile No.:</label>
+                    <input type="number" name="phonenumber1" id="phonenumber" placeholder="XXX XXX XXXX" min="1111111111" max="9999999999" required /><span class="validity"></span>
+                </div>
+                <hr>
+                <h3>Permanent Address</h3>
+                <div class="form-item">
+                    <label for="pstate">State:</label>
+                    <input type="text" name="pstate" id="pstate" placeholder="State" required>
+                </div>
+                <div class="form-item">
+                    <label for="pcity">City:</label>
+                    <input type="text" name="pcity" id="pcity" placeholder="City" required>
+                </div>
+                <div class="form-item">
+                    <label for="pzip">Zip Code:</label>
+                    <input type="number" name="pzip" id="pzip" placeholder="Zip Code" min="111111" max="999999" required>
+                </div>
+                <div class="form-item">
+                    <label for="phonenumber2">Tel/Mobile:</label>
+                    <input type="number" name="phonenumber2" id="pphonenumber" placeholder="XXX XXX XXXX" min="1111111111" max="9999999999" required>
+                </div>
+                <hr>
+                <h3>Temporary Address</h3>
+                <div class="same-perm">
+                    <label for="sameaspermanent">Same as Permanent Address:</label> <input type="checkbox" name="sameaspermanent" id="sameaspermanent">
+                </div>
+                <div class="form-item">
+                    <label for="tstate">State:</label>
+                    <input type="text" name="tstate" id="tstate" placeholder="State" required>
+                </div>
+                <div class="form-item">
+                    <label for="tcity">City:</label>
+                    <input type="text" name="tcity" id="tcity" placeholder="City" required>
+                </div>
+                <div class="form-item">
+                    <label for="tzip">Zip Code:</label>
+                    <input type="number" name="tzip" id="tzip" placeholder="Zip Code"min="111111" max="999999" required>
+                </div>
+                <div class="form-item">
+                    <label for="phonenumber3">Tel/Mobile:</label>
+                    <input type="tel" name="phonenumber3" id="tphonenumber" placeholder="XXX XXX XXXX" min="111111111" max="9999999999" required>
+                </div>
+
+                <button class="register" type="submit">Register</button>
+                <a href="{% url 'home' %}" ><button class="register" type="button">Back</button></a>
+            </form>
+        </div>
+
+    </div>
+<script src="/static/js/regsc.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Join Us</title>
+  <link rel="stylesheet" href="/static/style/style.css">
+</head>
+<body id="logbody">
+    
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+  <link rel="stylesheet" href="/static/style/temp.css">
+  <!--<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">-->
+</head>
+<body>
+	<div class="log2main">  	
+		<input type="checkbox" id="log2chk" aria-hidden="true">
+
+			<div class="log2signup">
+				<form action="/signup" method="post">
+					{% csrf_token %}
+					<label id="lbl1" for="log2chk" aria-hidden="true">Sign up</label>
+					<input id="inp1" type="text" name="Uname" placeholder="User name" required="">
+					<input id="inp1" type="email" name="remail" placeholder="Email" required="">
+					<input id="inp1" type="password" name="pswd" placeholder="Password" required="">
+					<button id="log2signupbt">Sign up</button>
+				</form>
+                <div class="log2backbtn">
+                    <a href="{% url 'home' %}" ><button id="log2back" >Back</button></a>
+                </div>
+			</div>
+
+			<div class="log2login">
+				<form action="/signin" method="post">
+					{% csrf_token %}
+					<label id="lbl1" for="log2chk" aria-hidden="true">Login</label>
+					<input id="inp1" type="text" name="Uname" placeholder="Enter your username" required="">
+					<input id="inp1" type="password" name="pswd" placeholder="Password" required="">
+					<button id="log2loginbt">Login</button>
+                    
+				</form>
+                <div class="log2backbtn">
+                    <a href="{% url 'home' %}" ><button id="log2back" >Back</button></a>
+                </div>
+                
+			</div>
+                 
+	</div>
+</body>
+</html>
+
+  
+</body>
+</html>

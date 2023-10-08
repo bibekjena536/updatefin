@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>User_Dash</title>
+  <link rel="stylesheet" href="/static/style/udash.css">
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <div class="container">
+    {% for message in message %}
+
+    <div class="alert alert-{{message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message:</strong>{{ message}}
+      <button type="button" class="cloudflare" data-dismiss="alert" aria-label="Colse">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          {% for a in u_data %}
+          <img src="{{a.userinfo_userpic.url}}" alt="put Your image">
+          {% endfor %}
+          
+          {% for a in u_data %}
+          <h3>Mr. {{ a.userinfo_Uname}}</h3>
+          {% endfor %}
+        </div>
+        <ul>
+          <li><a href="/u_dash">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Dashboard</span>
+            </a>
+          </li>
+          <li><a href="/u_info">
+              <i class="fa-solid fa-user-lock"></i>
+              <span class="nav-item">Personal Info</span>
+            </a>
+          </li>
+          <li><a href="/u_project">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span class="nav-item">Your Projects
+          </li>
+          <li><a href="/u_document">
+              <i class="fa-sharp fa-solid fa-folder-open"></i>
+              <span class="nav-item">Documnents</span>
+            </a>
+          </li>
+          <li><a href="/u_setting">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Setting</span>
+            </a>
+          </li>
+          <li><a href="/u_help">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+          </li>
+          <li><a href="{% url 'signout' %}" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="main">
+      <div class="main-top">
+        <p>Welcome to Codepractice</p>
+      </div>
+      <div class="main-body">
+        <div class="total-data">
+          <div class="headding">
+            Welcome {{ u_data.userinfo_Uname}}
+          </div>
+
+          <div class="data-user">
+            {% for a in u_data %}
+            <div class="divpart1">
+              <h3>Personal Details:-</h3>
+              
+              <div class="name-info">
+                <label for="name">Your Name:</label>
+                <b name="name">{{a.userinfo_name}}</b>
+              </div>
+              <div class="name-info">
+                <label for="Uname">Your User Name:</label>
+                <b name="Uname">{{a.userinfo_Uname}}</b>
+              </div>
+              <div class="name-info">
+                <label for="ftame">Father's Name:</label>
+                <b name="ftname">{{a.userinfo_Ftname}}</b>
+              </div>
+              <div class="name-info">
+                <label for="mtname">Mother's Name:</label>
+                <b name="mtname">{{a.userinfo_Mtname}}</b>
+              </div>
+              <div class="name-info">
+                <label for="email">Your Email:</label>
+                <b name="email">{{a.userinfo_email}}</b>
+              </div>
+              <div class="name-info">
+                <label for="phon">Your Contact Number:</label>
+                <b name="phon">{{a.userinfo_phoneno1}}</b>
+              </div>
+              <div class="name-info">
+                <label for="gender">Sex:</label>
+                <b name="gender">{{a.userinfo_gender}}</b>
+              </div>
+              <div class="name-info">
+                <label for="Qulification">Educational Qulification:</label>
+                <b name="Qulification">{{a.userinfo_Edulvl}}</b>
+              </div>
+              <div class="name-info">
+                <label for="expert">You are Expert in:</label>
+                <b name="expert">{{a.userinfo_Expedu}}</b>
+              </div>
+              </div>
+              <div class="divpart2">
+                <h3>Address Details:-</h3>
+                <div class="name-info">
+                  <label for="state">State:</label>
+                  <b name="state">{{a.userinfo_State}}</b>
+                </div>
+                <div class="name-info">
+                  <label for="city">City:</label>
+                  <b name="city">{{a.userinfo_City}}</b>
+                </div>
+                <div class="name-info">
+                  <label for="pin">Pin:</label>
+                  <b name="pin">{{a.userinfo_Zip}}</b>
+                </div>
+                <div class="name-info">
+                  <label for="dob">Date of Birth:</label>
+                  <b name="dob">{{a.userinfo_DoB}}</b>
+                </div>
+                <div class="name-info">
+                  <label for="jdate">Joining Date:</label>
+                  <b name="jdate">{{a.userinfo_jdate}}</b>
+                </div>
+                
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  {% endif %}
+
+</body>
+
+</html>

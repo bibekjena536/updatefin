@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ABOUT US</title>
+    <link rel="stylesheet" href="/static/style/style.css"></head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">BIBEK(L)</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'about' %}">ABOUT</a></li>
+                    <li><a href="{% url 'preatics' %}">OUR PREATICLE </a></li>
+                    <li><a href="{% url 'design' %}">OUR MSTI</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To search">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+
+        </div> 
+    </div>
+</body>
+</html>
